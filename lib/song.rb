@@ -51,6 +51,7 @@ class Song
   end 
  
   def self.new_from_filename(filename)
+<<<<<<< HEAD
     split_filename = filename.chomp(".mp3").split(" - ")
     song = Song.new 
     song.name = split_filename[1] 
@@ -65,6 +66,18 @@ class Song
     song.artist_name = split_filename[0]
     @@all << song 
     song 
+=======
+    song = Song.new 
+    song.name = (filename.split(" - ")[0].chomp(".mp3"))
+    song.artist_name = (filename.split(" - ")[1])
+    end
+   
+  def self.create_from_filename(filename)
+    song = Song.new
+    song.name = (filename.split(" - ")[0].chomp(".mp3"))
+    song.artist_name = (filename.split(" - ")[1])
+    @@all << song 
+>>>>>>> b093051ed171a6e5bd551cccbaacdefc8e3d865b
   end 
   
   def self.destroy_all
